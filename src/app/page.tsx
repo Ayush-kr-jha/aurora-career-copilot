@@ -17,6 +17,13 @@ const AURORA_SYSTEM_PROMPT = `You are AURORA - a Modular Multi-Agent Career Grow
 Be encouraging, structured, and practical. Use bullet points and tables when helpful. Keep responses concise but actionable.`;
 
 export default function Home() {
+  // Register service worker for PWA
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(console.error);
+    }
+  }, []);
+
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'aurora',
