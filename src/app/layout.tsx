@@ -1,12 +1,17 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Aurora - Your Career Co-Pilot',
   description: 'AI-powered career coaching and learning assistant for developers',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
-  themeColor: '#6366f1',
   manifest: '/manifest.json',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#09090b',
 };
 
 export default function RootLayout({
@@ -18,6 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>{children}</body>
     </html>
